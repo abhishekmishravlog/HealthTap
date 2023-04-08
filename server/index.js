@@ -18,6 +18,9 @@ mongoose.connect(process.env.MONGO_URL, {
     console.log(err);
 });
 
+// routes
+app.use("/api/v1/user", require("./routes/userRoutes"));
+
 app.listen(process.env.PORT, () => {
     console.log(`Server is listening to port ${process.env.PORT}`);
 });
